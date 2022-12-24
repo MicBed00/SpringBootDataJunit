@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  dbDemo:
+    image: postgres:15-alpine
+    container_name: demoOrm
+    volumes:
+      - dbDemoOrm:/var/lib/postgres/data
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=demo
+      - POSTGRES_DB=demoDb
+    ports:
+      - 5400:5432
+volumes:
+  dbDemoOrm:
